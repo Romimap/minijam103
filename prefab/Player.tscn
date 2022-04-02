@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Player.cs" type="Script" id=1]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.515638
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+m_speed = 300.0
+m_height = 1.2
+m_mouseSensitivity = 0.005
+
+[node name="Camera" type="Camera" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, -10, 0 )
+debug_shape_thickness = 4
