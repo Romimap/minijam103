@@ -41,4 +41,4 @@ expand = true
 [node name="Stair" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.4175, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.15, 0 )
