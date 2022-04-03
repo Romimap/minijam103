@@ -43,6 +43,7 @@ public class Player : KinematicBody
         if (Input.IsKeyPressed((int)KeyList.S)) m_input.z += 1;
         if (Input.IsKeyPressed((int)KeyList.A)) m_input.x -= 1;
         if (Input.IsKeyPressed((int)KeyList.D)) m_input.x += 1;
+        GD.Print(m_input);
 
         Vector3 forward = m_camera.Transform.basis.z;
         forward.y = 0;
