@@ -14,6 +14,14 @@ config/name="Minijam 103"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=300
+window/size/height=200
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="viewport"
+
 [physics]
 
 common/enable_pause_aware_picking=true
