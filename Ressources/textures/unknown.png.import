@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Z18-TileA4.png-d2054efcf91625df0621d3a63e16936c.stex"
+path="res://.import/unknown.png-59c98ee160e46cce5d222e1622e169f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Z18-TileA4.png"
-dest_files=[ "res://.import/Z18-TileA4.png-d2054efcf91625df0621d3a63e16936c.stex" ]
+source_file="res://Ressources/textures/unknown.png"
+dest_files=[ "res://.import/unknown.png-59c98ee160e46cce5d222e1622e169f4.stex" ]
 
 [params]
 
