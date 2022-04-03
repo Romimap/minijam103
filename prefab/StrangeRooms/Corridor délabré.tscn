@@ -4,7 +4,7 @@
 [ext_resource path="res://models/tjunction.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://models/rturn.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://models/corridor.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://textures/CorridorTexDélabré.tres" type="Material" id=5]
+[ext_resource path="res://textures/CorridorTex.tres" type="Material" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 10.5004, 1, 12.6642 )
@@ -147,59 +147,25 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, -1.
 shape = SubResource( 8 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.34643 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0175338, 0, 4.17402 )
+light_color = Color( 0.968627, 0.576471, 0.0235294, 1 )
+light_energy = 3.48
+light_indirect_energy = 1.881
+light_specular = 4.719
 
 [node name="OmniLight2" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.98256 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59187, 0, -8.25542 )
+light_color = Color( 0.968627, 0.576471, 0.0235294, 1 )
+light_energy = 3.48
+light_indirect_energy = 1.881
+light_specular = 4.719
 
 [node name="OmniLight3" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.427312 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight4" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.80173 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight5" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.07097 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight6" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76798, 0, -8.07097 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight7" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41945, 0, -8.07097 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight8" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0146418, 0, -11.8936 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight9" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71741, 0, -11.8936 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight10" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.59367, 0, -11.8936 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
-
-[node name="OmniLight11" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.35052, 0, -11.8936 )
-light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
-light_energy = 3.055
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29754, 0, -12.3874 )
+light_color = Color( 0.968627, 0.576471, 0.0235294, 1 )
+light_energy = 1.719
+light_indirect_energy = 1.881
+light_specular = 4.719
 
 [connection signal="body_entered" from="Area" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area" to="." method="OnBodyExited"]
