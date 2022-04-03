@@ -6,8 +6,8 @@ public class Player : KinematicBody
     public static Player Singleton;
     private RayCast m_rayCast;
     private Camera m_camera;
-    [Export] private float m_speed = 10;
-    [Export] private float m_height = 0.8f;
+    [Export] private float m_speed = 300;
+    [Export] private float m_height = 1.2f;
     [Export] private float m_mouseSensitivity = 0.01f;
 
     private float azimuth = 0;
