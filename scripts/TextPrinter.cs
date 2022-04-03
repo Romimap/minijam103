@@ -22,6 +22,8 @@ public class TextPrinter : MeshInstance
 
 
     public override void _Process(float delta) {
+        if (textPrinters[0] != this) return;
+
         float mindist = 999;
 
         foreach (TextPrinter tp in textPrinters) {
@@ -32,7 +34,7 @@ public class TextPrinter : MeshInstance
         }
 
         if (mindist < 3) {
-            if (Input.IsKeyPressed((int)KeyList.F)) GD.Print("DIE");
+            if (Input.IsActionPressed("action")) Player.Singleton.Die();
             float alpha = (3 - mindist);
             m_buttonLabel.Modulate = new Color(1, 1, 1, alpha);
         }

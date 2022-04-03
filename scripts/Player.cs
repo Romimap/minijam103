@@ -24,6 +24,8 @@ public class Player : KinematicBody
 
         //Captures the mouse
         Input.SetMouseMode(Input.MouseMode.Captured);
+
+        GetNode<AnimationPlayer>("../Control/AnimationPlayer").Play("FadeIn");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,10 +41,10 @@ public class Player : KinematicBody
         }
 
         Vector3 m_input = new Vector3();
-        if (Input.IsKeyPressed((int)KeyList.W)) m_input.z -= 1;
-        if (Input.IsKeyPressed((int)KeyList.S)) m_input.z += 1;
-        if (Input.IsKeyPressed((int)KeyList.A)) m_input.x -= 1;
-        if (Input.IsKeyPressed((int)KeyList.D)) m_input.x += 1;
+        if (Input.IsActionPressed("forward")) m_input.z -= 1;
+        if (Input.IsActionPressed("back")) m_input.z += 1;
+        if (Input.IsActionPressed("left")) m_input.x -= 1;
+        if (Input.IsActionPressed("right")) m_input.x += 1;
         GD.Print(m_input);
 
         Vector3 forward = m_camera.Transform.basis.z;
@@ -71,5 +73,9 @@ public class Player : KinematicBody
 
     public override void _PhysicsProcess(float delta) {
         m_velocity = m_velocity * 0.9f + m_targetVelocity * 0.1f;
+    }
+
+    public void Die () {
+        GetNode<AnimationPlayer>("../Control/AnimationPlayer").Play("FadeOut");
     }
 }
