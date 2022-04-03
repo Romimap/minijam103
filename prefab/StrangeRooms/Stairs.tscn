@@ -31,7 +31,7 @@ extents = Vector3( 4.81679, 1, 2 )
 
 [node name="T-Junction" type="VisibilityNotifier"]
 portal_mode = 4
-aabb = AABB( -2.13525, -1, -6, 16, 2, 8 )
+aabb = AABB( -2.13525, -7.01016, -6, 16, 8.3377, 8 )
 script = ExtResource( 1 )
 nodePaths = [ NodePath("Ports/A"), NodePath("Ports/B") ]
 

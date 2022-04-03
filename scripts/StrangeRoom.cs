@@ -14,6 +14,8 @@ public class StrangeRoom : VisibilityNotifier {
     private List<int> availablePorts = new List<int>();
     private List<int> usedPorts = new List<int>();
     private bool seen = false;
+    private bool visited = false;
+
 
 
     private Area area;
@@ -34,6 +36,7 @@ public class StrangeRoom : VisibilityNotifier {
             packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/Corridor.tscn"));
             packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/Room.tscn"));
             packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/Stairs.tscn"));
+            packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/ButtonRoom.tscn"));
         }
 
         rooms.Add(this);
@@ -87,8 +90,7 @@ public class StrangeRoom : VisibilityNotifier {
         links.Add(link);
 
 
-        //NOT SURE :(
-        
+        //NOT SURE :(        
         Quat otherQuat = new Quat(Vector3.Up, Mathf.Pi) * ports[onPort].GlobalTransform.basis.Quat() * other.ports[otherPort].Transform.basis.Quat().Inverse();
         other.GlobalTransform = new Transform(otherQuat, Vector3.Zero);
         other.GlobalTranslate(ports[onPort].GlobalTransform.origin - other.ports[otherPort].GlobalTransform.origin);
@@ -129,11 +131,14 @@ public class StrangeRoom : VisibilityNotifier {
         QueueFree();
     }
 
+    public virtual void OnFirstVisit () {
+
+    }
 
     //Called when the room is not in the viewport
     public void OnNotVisible () {
         if (current.Contains(this)) return; //Returns if the player is still on the room
-        removeStrangeRoom();
+            removeStrangeRoom();
     }
 
 
@@ -141,6 +146,9 @@ public class StrangeRoom : VisibilityNotifier {
     public void OnBodyEntered(Node body) {
         if (body is Player) {
             if (!current.Contains(this)) current.Add(this);
+            if (!seen || visited) return;
+            visited = true;
+            OnFirstVisit();
         }
     }
 

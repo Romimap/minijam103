@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/StrangeRoom.cs" type="Script" id=1]
 [ext_resource path="res://models/room.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://textures/RoomTex.tres" type="Material" id=3]
 [ext_resource path="res://textures/CorridorTex.tres" type="Material" id=4]
 [ext_resource path="res://models/corridor.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://prefab/StrangeRooms/Days.cs" type="Script" id=6]
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 3.54259, 1, 5.033 )
+extents = Vector3( 7.48943, 2.2884, 5.033 )
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 3, 1.2, 0.3 )
@@ -30,9 +31,25 @@ extents = Vector3( 1, 1, 4 )
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 2, 0.1, 5 )
 
+[sub_resource type="QuadMesh" id=9]
+size = Vector2( 2.135, 1.257 )
+
+[sub_resource type="ViewportTexture" id=12]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=11]
+resource_local_to_scene = true
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 3.82
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = SubResource( 12 )
+
 [node name="Room2" type="VisibilityNotifier"]
 portal_mode = 4
-aabb = AABB( -3.57123, -1, -5, 14.9374, 2, 10 )
+aabb = AABB( -3.57123, -2.9322, -5, 14.9374, 5.8644, 10 )
 script = ExtResource( 1 )
 nodePaths = [ NodePath("Ports/A"), NodePath("Ports/B") ]
 
@@ -124,6 +141,31 @@ light_energy = 3.055
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53517, 0.608763, -2.36921 )
 light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
 light_energy = 3.055
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 90, 60 )
+
+[node name="ColorRect" type="ColorRect" parent="Viewport"]
+margin_right = 90.0
+margin_bottom = 60.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Viewport"]
+modulate = Color( 0.694118, 0.984314, 0.654902, 1 )
+margin_top = 50.0
+margin_right = 90.0
+margin_bottom = 110.0
+rect_rotation = 180.0
+rect_scale = Vector2( -1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center] F"
+text = " F"
+script = ExtResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.943564, -0.33119, 0, 0.33119, 0.943564, 0, 0.519635, -3.67761 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 11 )
 
 [connection signal="body_entered" from="Area" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area" to="." method="OnBodyExited"]
