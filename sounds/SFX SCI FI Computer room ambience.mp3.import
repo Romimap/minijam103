@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SFX SCI FI Computer room ambience.mp3-ce05e21d5cef6b3246f8c7ce2745a54c.mp3str"
+
+[deps]
+
+source_file="res://sounds/SFX SCI FI Computer room ambience.mp3"
+dest_files=[ "res://.import/SFX SCI FI Computer room ambience.mp3-ce05e21d5cef6b3246f8c7ce2745a54c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

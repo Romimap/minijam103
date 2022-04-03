@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SFX SCI FI Hum.mp3-21014db40c60326010c23a6bde7bcde3.mp3str"
+
+[deps]
+
+source_file="res://sounds/SFX SCI FI Hum.mp3"
+dest_files=[ "res://.import/SFX SCI FI Hum.mp3-21014db40c60326010c23a6bde7bcde3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

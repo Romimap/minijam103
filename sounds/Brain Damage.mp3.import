@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Brain Damage.mp3-5803b767386971ead5661fd4437ccdbf.mp3str"
+
+[deps]
+
+source_file="res://sounds/Brain Damage.mp3"
+dest_files=[ "res://.import/Brain Damage.mp3-5803b767386971ead5661fd4437ccdbf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
