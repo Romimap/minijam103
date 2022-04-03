@@ -110,5 +110,20 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, -
 mesh = ExtResource( 5 )
 material/0 = ExtResource( 4 )
 
+[node name="OmniLight4" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26341, -2.37136 )
+light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
+light_energy = 3.055
+
+[node name="OmniLight5" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26341, 2.90849 )
+light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
+light_energy = 3.055
+
+[node name="OmniLight6" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53517, 0.608763, -2.36921 )
+light_color = Color( 0.733333, 0.968627, 0.956863, 1 )
+light_energy = 3.055
+
 [connection signal="body_entered" from="Area" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area" to="." method="OnBodyExited"]
