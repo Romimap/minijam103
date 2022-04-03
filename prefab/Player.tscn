@@ -18,5 +18,5 @@ shape = SubResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
 enabled = true
-cast_to = Vector3( 0, -10, 0 )
+cast_to = Vector3( 0, -100, 0 )
 debug_shape_thickness = 4
