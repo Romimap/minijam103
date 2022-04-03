@@ -4,7 +4,7 @@
 [ext_resource path="res://models/tjunction.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://models/rturn.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://models/corridor.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://textures/CorridorTex.tres" type="Material" id=5]
+[ext_resource path="res://textures/CorridorTexDélabré.tres" type="Material" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 10.5004, 1, 12.6642 )
