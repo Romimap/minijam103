@@ -33,7 +33,7 @@ public class StrangeRoom : VisibilityNotifier {
             packedScenes = new List<PackedScene>();
             packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/Corridor.tscn"));
             packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/Room.tscn"));
-            packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/T-Junction.tscn"));
+            packedScenes.Add(ResourceLoader.Load<PackedScene>("res://prefab/StrangeRooms/Stairs.tscn"));
         }
 
         rooms.Add(this);
@@ -133,7 +133,6 @@ public class StrangeRoom : VisibilityNotifier {
     //Called when the room is not in the viewport
     public void OnNotVisible () {
         if (current.Contains(this)) return; //Returns if the player is still on the room
-
         removeStrangeRoom();
     }
 
