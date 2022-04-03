@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/StrangeRoom.cs" type="Script" id=1]
+[ext_resource path="res://prefab/T-Junction.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.36789, 1, 2.42031 )
+
+[node name="T-Junction" type="VisibilityNotifier"]
+portal_mode = 4
+aabb = AABB( -2.36511, -1, -2.46373, 4.73022, 2, 4.92745 )
+script = ExtResource( 1 )
+nodePaths = [ NodePath("Ports/A"), NodePath("Ports/B"), NodePath("Ports/C") ]
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 1 )
+
+[node name="Ports" type="Spatial" parent="."]
+
+[node name="A" type="Spatial" parent="Ports"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="B" type="Spatial" parent="Ports"]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.58735e-08, 0, -2 )
+
+[node name="C" type="Spatial" parent="Ports"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -3.57628e-07 )
+
+[node name="T-Junction" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[connection signal="body_entered" from="Area" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area" to="." method="OnBodyExited"]

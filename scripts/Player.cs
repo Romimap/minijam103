@@ -3,6 +3,7 @@ using System;
 
 public class Player : KinematicBody
 {
+    public static Player Singleton;
     private RayCast m_rayCast;
     private Camera m_camera;
     [Export] private float m_speed = 10;
@@ -17,6 +18,7 @@ public class Player : KinematicBody
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() {
+        Singleton = this;
         m_rayCast = GetNode<RayCast>("./RayCast");
         m_camera = GetNode<Camera>("./Camera");
 
@@ -34,13 +36,11 @@ public class Player : KinematicBody
             Transform t = GlobalTransform;
             t.origin = collisionPoint + Vector3.Up * m_height;
             GlobalTransform = t;
-
-            GD.Print("Collision point: " + collisionPoint);
         }
 
         Vector3 m_input = new Vector3();
-        if (Input.IsKeyPressed((int)KeyList.W)) m_input.z += 1;
-        if (Input.IsKeyPressed((int)KeyList.S)) m_input.z -= 1;
+        if (Input.IsKeyPressed((int)KeyList.W)) m_input.z -= 1;
+        if (Input.IsKeyPressed((int)KeyList.S)) m_input.z += 1;
         if (Input.IsKeyPressed((int)KeyList.A)) m_input.x -= 1;
         if (Input.IsKeyPressed((int)KeyList.D)) m_input.x += 1;
 
