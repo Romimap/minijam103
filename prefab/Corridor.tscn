@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2, 0.3, 2 )
 
-[node name="Corridor" type="Spatial"]
+[node name="Corridor2" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="corridor" type="MeshInstance" parent="."]

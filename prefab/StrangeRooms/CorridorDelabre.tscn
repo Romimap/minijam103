@@ -30,7 +30,7 @@ extents = Vector3( 1, 1, 6.4 )
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 2, 0.1, 5 )
 
-[node name="Corridor" type="VisibilityNotifier"]
+[node name="Corridor2" type="VisibilityNotifier"]
 portal_mode = 4
 aabb = AABB( -10.1998, -1, -14.474, 20.3996, 2, 24.4587 )
 script = ExtResource( 1 )
